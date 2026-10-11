@@ -13,10 +13,19 @@ information to identify potentially fragile dependencies.
 - Analyze results using Snowflake.
 
 ## Initial Scope
-Python packages only, with a sample of 20–50 packages.
+Python packages only, with a sample of 100 packages.
 
 ## Architecture
 To be documented in docs/architecture.md.
 
 ## Data Sources
 PyPI, GitHub, deps.dev, and OSV.dev.
+
+
+
+This platform should eventually answer questions such as:
+1. Which packages have not released a new version for a long time?
+2. Which packages have few active contributors?
+3. Which packages are depended on by many other packages?
+4. Which package versions have known vulnerabilities?
+5. Which widely used packages appear to have weak maintenance signals?
