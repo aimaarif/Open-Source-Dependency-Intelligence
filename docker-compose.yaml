@@ -1,0 +1,30 @@
+
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: airflow/Dockerfile
+
+    container_name: osd-airflow
+    command: standalone
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      AIRFLOW_HOME: /opt/airflow
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT: "60"
+      PYTHONPATH: /opt/airflow/project
+
+      AWS_PROFILE: ${AWS_PROFILE:-dependency-dev}
+      AWS_REGION: ${AWS_REGION:-ap-south-1}
+      S3_BRONZE_BUCKET: ${S3_BRONZE_BUCKET:-osd-s3-bucket}
+      AWS_SHARED_CREDENTIALS_FILE: /home/airflow/.aws/credentials
+      AWS_CONFIG_FILE: /home/airflow/.aws/config
+
+    volumes:
+      - ./airflow:/opt/airflow
+      - .:/opt/airflow/project
+      - ${USERPROFILE}/.aws:/home/airflow/.aws:ro
