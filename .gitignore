@@ -1,4 +1,5 @@
 .venv/
+.venv-spark/
 __pycache__/
 .pytest_cache/
 .env
