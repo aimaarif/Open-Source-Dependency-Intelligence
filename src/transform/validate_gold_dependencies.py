@@ -118,6 +118,7 @@ def main():
                 "package_name",
                 "version",
                 "snapshot_date",
+                "run_id",
                 "dependency_declaration",
             )
             .count()

@@ -94,7 +94,6 @@ def main():
 
         input_count = bronze_df.count()
 
-        # A successful record needs HTTP 200 and usable package metadata.
         successful_df = bronze_df.filter(
             (F.col("http_status") == 200)
             & F.col("payload.info.name").isNotNull()
