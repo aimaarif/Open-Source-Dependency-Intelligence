@@ -17,11 +17,10 @@ Risk analytics and dashboard
 Rank packages and explain the evidence behind each indicator
 
 
-Technology	    What you will learn and implement
 Python:	        API extraction, validation, and reusable modules
 Apache Airflow:	DAGs, dependencies, retries, scheduling, and task monitoring
 Amazon S3:	    Cloud object storage, partitioned paths, and historical raw data
-PySpark:	        Distributed transformations and data-quality checks
+PySpark:	    Distributed transformations and data-quality checks
 Delta Lake:	    Reliable Silver and Gold tables
 Databricks:   	Managed environment for Spark and lakehouse processing
 Snowflake:	    Analytical warehouse and SQL-based investigation

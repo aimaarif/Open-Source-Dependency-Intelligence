@@ -16,7 +16,7 @@ docker run --rm `
     -v "${ProjectPath}:/opt/project" `
     -v "${BronzePath}:/opt/project/data/raw/pypi:ro" `
     -w /opt/project `
-    apache/spark:4.2.0-python3 `
+    osd-spark:4.2.0 `
     /opt/spark/bin/spark-submit $Script
 
 if ($LASTEXITCODE -ne 0) {
